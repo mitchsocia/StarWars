@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewTableViewController.swift
 //  StarWars
 //
 //  Created by Mitchell Socia on 10/29/18.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 
 }
-
