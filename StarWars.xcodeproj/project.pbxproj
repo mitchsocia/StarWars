@@ -16,6 +16,7 @@
 		7DFDB2FB21874E4000B108D2 /* MainViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFDB2FA21874E4000B108D2 /* MainViewTableViewController.swift */; };
 		7DFDB2FE2187827100B108D2 /* Empire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFDB2FD2187827100B108D2 /* Empire.swift */; };
 		7DFDB300218783AA00B108D2 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFDB2FF218783AA00B108D2 /* NetworkCall.swift */; };
+		7DFDB304218898EB00B108D2 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFDB303218898EB00B108D2 /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7DFDB2FA21874E4000B108D2 /* MainViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableViewController.swift; sourceTree = "<group>"; };
 		7DFDB2FD2187827100B108D2 /* Empire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empire.swift; sourceTree = "<group>"; };
 		7DFDB2FF218783AA00B108D2 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		7DFDB303218898EB00B108D2 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,8 @@
 		7DFDB2C021874B5D00B108D2 = {
 			isa = PBXGroup;
 			children = (
+				7DFDB302218898BD00B108D2 /* Views */,
+				7DFDB3012188989700B108D2 /* Controllers */,
 				7DFDB2FC2187824F00B108D2 /* Models */,
 				7DFDB2CB21874B5D00B108D2 /* StarWars */,
 				7DFDB2E021874B5F00B108D2 /* StarWarsTests */,
@@ -103,11 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				7DFDB2CC21874B5D00B108D2 /* AppDelegate.swift */,
-				7DFDB2D021874B5D00B108D2 /* Main.storyboard */,
 				7DFDB2D321874B5F00B108D2 /* Assets.xcassets */,
 				7DFDB2D521874B5F00B108D2 /* LaunchScreen.storyboard */,
 				7DFDB2D821874B5F00B108D2 /* Info.plist */,
-				7DFDB2FA21874E4000B108D2 /* MainViewTableViewController.swift */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -137,6 +139,23 @@
 				7DFDB2FF218783AA00B108D2 /* NetworkCall.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7DFDB3012188989700B108D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7DFDB2FA21874E4000B108D2 /* MainViewTableViewController.swift */,
+				7DFDB303218898EB00B108D2 /* CharacterDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7DFDB302218898BD00B108D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7DFDB2D021874B5D00B108D2 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFDB304218898EB00B108D2 /* CharacterDetailViewController.swift in Sources */,
 				7DFDB2FE2187827100B108D2 /* Empire.swift in Sources */,
 				7DFDB2CD21874B5D00B108D2 /* AppDelegate.swift in Sources */,
 				7DFDB300218783AA00B108D2 /* NetworkCall.swift in Sources */,

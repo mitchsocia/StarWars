@@ -8,16 +8,17 @@
 
 import UIKit
 
-var characters = [Empire]()
+
 
 class MainViewTableViewController: UITableViewController {
     
     var empire: Empire?
     var networkCall = NetworkCall()
-    
+    var characters = [Empire]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(characters)
         empire = networkCall.parse(data: networkCall.performStoreRequest(with: networkCall.empireURL())!)
 //        empire?.characters.first
     }
