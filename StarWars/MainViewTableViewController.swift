@@ -20,7 +20,7 @@ class MainViewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         empire = networkCall.parse(data: networkCall.performStoreRequest(with: networkCall.empireURL())!)
-        print(characters)
+        print(empire?.characters)
         //        print("\(empire?.characters)")
         
     }
