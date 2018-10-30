@@ -8,18 +8,21 @@
 
 import UIKit
 
-var characters = [Empire]()
+
 
 class MainViewTableViewController: UITableViewController {
     
     var empire: Empire?
     var networkCall = NetworkCall()
+    var characters: [Empire] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         empire = networkCall.parse(data: networkCall.performStoreRequest(with: networkCall.empireURL())!)
-        //        empire?.characters.first
+        print(characters)
+        //        print("\(empire?.characters)")
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +31,7 @@ class MainViewTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
-        cell.textLabel?.text = empire?.characters[indexPath.row]
+        cell.textLabel?.text = "\(characters[indexPath.row])"
         return cell
     }
     
