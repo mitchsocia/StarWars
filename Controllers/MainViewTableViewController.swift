@@ -14,20 +14,11 @@ class MainViewTableViewController: UITableViewController {
     
     var empire: Empire?
     var networkCall = NetworkCall()
-<<<<<<< HEAD:Controllers/MainViewTableViewController.swift
-    var characters = [Empire]()
-=======
-    var characters: [Empire] = []
-    
->>>>>>> populate-initial-character-data:StarWars/MainViewTableViewController.swift
+    var characters: [Person] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(characters)
-        empire = networkCall.parse(data: networkCall.performStoreRequest(with: networkCall.empireURL())!)
-        print(empire?.characters)
-        //        print("\(empire?.characters)")
-        
+        networkCall.fetchPeopleInEmpireStrikesBack() { people in }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

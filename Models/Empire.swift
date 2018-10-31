@@ -9,8 +9,16 @@
 import Foundation
 
 struct Empire: Codable {
-    
+
     var characters: [String]
-    
+
 }
 
+//class Empire: Codable {
+//    var characters = [Characters]()
+//}
+//
+//class Characters: Codable {
+//
+//    var characterName = ""
+//}
