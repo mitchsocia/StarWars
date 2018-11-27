@@ -19,7 +19,6 @@ class MainViewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characters = fetchPeopleInEmpireStrikesBack()
-       fetchPlanetsInEmpireStrikesBack()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,6 +72,9 @@ extension MainViewTableViewController {
                 return
             }
             let urlStrings = (movieInfo?["characters"] as? [String]) ?? []
+                
+            self.characters.append(Person(name: name, homeworld: homeworld))
+            
             for urlString in urlStrings {
                 if let url = URL(string: urlString) {
                     self.characterURLs.append(url)
@@ -124,38 +126,6 @@ extension MainViewTableViewController {
             return nil
         }
     }
-    
-    func fetchPlanetsInEmpireStrikesBack() -> [Person] {
-        let url = empireURL()
-        let defaultSession = URLSession(configuration: .default)
-        let urlRequest = URLRequest(url: url)
-        let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
-            //parse array of URLs
-            guard let data = data else {
-                return
-            }
-            
-            // converts data to JSON object (String: Any key-value pairs)
-            guard let movieInfo = (try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]) else {
-                return
-            }
-            let urlStrings = (movieInfo?["planets"] as? [String]) ?? []
-            for urlString in urlStrings {
-                if let url = URL(string: urlString) {
-                    self.homeWorldURLs.append(url)
-                    print(self.homeWorldURLs)
-                    
-                }
-            }
-            self.getCharacters(from: self.homeWorldURLs)
-            
-        }
-        dataTask.resume()
-        
-        return characters
-        
-    }
-    
     
     
 }
