@@ -11,10 +11,10 @@ import UIKit
 
 
 class MainViewTableViewController: UITableViewController {
-    
-    var homeWorldURLs = [URL]()
+
     var characterURLs = [URL]()
     var characters: [Person] = []
+//    var homeWorld: Homeworld?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +72,7 @@ extension MainViewTableViewController {
                 return
             }
             let urlStrings = (movieInfo?["characters"] as? [String]) ?? []
-                
-            self.characters.append(Person(name: name, homeworld: homeworld))
-            
+//            let homeWorld = (movieInfo?["planets"] as? String)
             for urlString in urlStrings {
                 if let url = URL(string: urlString) {
                     self.characterURLs.append(url)
@@ -126,6 +124,5 @@ extension MainViewTableViewController {
             return nil
         }
     }
-    
     
 }

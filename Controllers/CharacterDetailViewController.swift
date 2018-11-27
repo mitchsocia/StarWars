@@ -11,6 +11,7 @@ import UIKit
 class CharacterDetailViewController: UIViewController {
 
     var person: Person?
+    var homeWorld: Homeworld?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +26,6 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterBirthYearLabel: UILabel!
     @IBOutlet weak var characterGenderLabel: UILabel!
     @IBOutlet weak var characterHomeWorldLabel: UILabel!
+    
     
 }
