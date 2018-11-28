@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DB4676B21ADDFE4003BDA18 /* Homeworld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */; };
+		7DB467A721AF19AF003BDA18 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB467A621AF19AF003BDA18 /* Species.swift */; };
 		7DD646B92188DC270021E886 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD646B82188DC270021E886 /* Person.swift */; };
 		7DFDB2CD21874B5D00B108D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFDB2CC21874B5D00B108D2 /* AppDelegate.swift */; };
 		7DFDB2D221874B5D00B108D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFDB2D021874B5D00B108D2 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeworld.swift; sourceTree = "<group>"; };
+		7DB467A621AF19AF003BDA18 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		7DD646B82188DC270021E886 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7DFDB2C921874B5D00B108D2 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFDB2CC21874B5D00B108D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				7DD646B82188DC270021E886 /* Person.swift */,
 				7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */,
+				7DB467A621AF19AF003BDA18 /* Species.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				7DFDB304218898EB00B108D2 /* CharacterDetailViewController.swift in Sources */,
 				7DFDB2CD21874B5D00B108D2 /* AppDelegate.swift in Sources */,
 				7DFDB2FB21874E4000B108D2 /* MainViewTableViewController.swift in Sources */,
+				7DB467A721AF19AF003BDA18 /* Species.swift in Sources */,
 				7DB4676B21ADDFE4003BDA18 /* Homeworld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -72,7 +72,6 @@ extension MainViewTableViewController {
                 return
             }
             let urlStrings = (movieInfo?["characters"] as? [String]) ?? []
-//            let homeWorld = (movieInfo?["planets"] as? String)
             for urlString in urlStrings {
                 if let url = URL(string: urlString) {
                     self.characterURLs.append(url)

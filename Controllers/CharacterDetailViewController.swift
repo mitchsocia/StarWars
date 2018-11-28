@@ -12,6 +12,7 @@ class CharacterDetailViewController: UIViewController {
     
     var person: Person?
     var homeWorld: Homeworld?
+    var species: Species?
     
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterBirthYearLabel: UILabel!
@@ -24,6 +25,13 @@ class CharacterDetailViewController: UIViewController {
             let homeworldURL = getHomeworldURL(from: character.homeworld)
             if let url = homeworldURL {
                 getHomeworldData(from: url)
+         
+        //Species Call - 4
+            let speciesURL = getSpeciesURL(from: character.species)
+                print("SPECIES URL IS: \(speciesURL)")
+                if let url = speciesURL {
+                    getSpeciesData(from: url)
+                }
             }
         }
         characterNameLabel.text = person?.name
@@ -72,5 +80,45 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
+    //Species Call - 1
+    func getSpeciesURL(from speciesString: String) -> URL? {
+        guard let url = URL(string: speciesString) else { return nil }
+        
+        return url
+    }
+    
+    //Species Call - 2
+    func getSpeciesData(from url: URL) -> [Species] {
+        let defaultSession = URLSession(configuration: .default)
+        let urlRequest = URLRequest(url: url)
+        let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
+            
+            guard let data = data else {
+                return
+            }
+            
+            self.species = self.parseSpecies(data: data)
+            
+//            DispatchQueue.main.async {
+//                self.updateLabels()
+//            }
+        }
+        dataTask.resume()
+    }
+    
+    //Species Call - 3
+    func parseSpecies(data: Data) -> Species? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Species.self, from: data)
+            
+            return result
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
+    
     
 }
+
