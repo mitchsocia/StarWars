@@ -14,7 +14,6 @@ class MainViewTableViewController: UITableViewController {
 
     var characterURLs = [URL]()
     var characters: [Person] = []
-//    var homeWorld: Homeworld?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -81,14 +81,14 @@ class CharacterDetailViewController: UIViewController {
     }
     
     //Species Call - 1
-    func getSpeciesURL(from speciesString: String) -> URL? {
-        guard let url = URL(string: speciesString) else { return nil }
+    func getSpeciesURL(from speciesArrayURL: String) -> [URL]? {
+        guard let url = URL(string: speciesArrayURL) else { return nil }
         
         return url
     }
     
     //Species Call - 2
-    func getSpeciesData(from url: URL) -> [Species] {
+    func getSpeciesData(from url: URL) -> Species {
         let defaultSession = URLSession(configuration: .default)
         let urlRequest = URLRequest(url: url)
         let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
