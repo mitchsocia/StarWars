@@ -81,7 +81,7 @@ class CharacterDetailViewController: UIViewController {
     }
     
     //Species Call - 1
-    func getSpeciesURL(from speciesArrayURL: String) -> [URL]? {
+    func getSpeciesURL(from speciesArrayURL: String) -> URL? {
         guard let url = URL(string: speciesArrayURL) else { return nil }
         
         return url
@@ -104,7 +104,10 @@ class CharacterDetailViewController: UIViewController {
 //            }
         }
         dataTask.resume()
+        
+        return species!
     }
+    
     
     //Species Call - 3
     func parseSpecies(data: Data) -> Species? {
