@@ -20,11 +20,20 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let character = person {
+            let homeworldURL = getHomeworldURL(from: character.homeworld)
+            if let url = homeworldURL {
+                getHomeworldData(from: url)
+            }
+        }
         characterNameLabel.text = person?.name
         characterBirthYearLabel.text = person?.birth_year
         characterGenderLabel.text = person?.gender
-        characterHomeWorldLabel.text = person?.homeworld
-        
+        characterHomeWorldLabel.text = homeWorld?.name
+    }
+    
+    func updateLabels() {
+        characterHomeWorldLabel.text = homeWorld?.name
     }
     
     func getHomeworldURL(from homeworldString: String) -> URL? {
@@ -37,20 +46,30 @@ class CharacterDetailViewController: UIViewController {
         let defaultSession = URLSession(configuration: .default)
         let urlRequest = URLRequest(url: url)
         let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
-            
+
             guard let data = data else {
                 return
             }
-            
-            let currentPerson = self.parse(data: data)
-            self.characters.append(currentPerson!)
-            if self.characters.count == self.characterURLs.count {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+
+            self.homeWorld = self.parse(data: data)
+
+            DispatchQueue.main.async {
+                self.updateLabels()
             }
         }
         dataTask.resume()
+    }
+    
+    func parse(data: Data) -> Homeworld? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Homeworld.self, from: data)
+            
+            return result
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
     }
     
     
