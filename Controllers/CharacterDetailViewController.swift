@@ -13,6 +13,7 @@ class CharacterDetailViewController: UIViewController {
     var person: Person?
     var homeWorld: Homeworld?
     var species: Species?
+    var speciesArray: [Species] = []
     
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterBirthYearLabel: UILabel!
@@ -27,18 +28,33 @@ class CharacterDetailViewController: UIViewController {
                 getHomeworldData(from: url)
          
         //Species Call - 4
-            let speciesURL = getSpeciesURL(from: character.species)
-                print("SPECIES URL IS: \(speciesURL)")
-                if let url = speciesURL {
-                    getSpeciesData(from: url)
-                }
+//            let speciesURL = getSpeciesURL()
+//                print("SPECIES URL IS: \(speciesURL)")
+//                if let url = speciesURL {
+//                    getSpeciesData(from: url)
+//                }
             }
+           
         }
+        
+         getSpecies()
+        
         characterNameLabel.text = person?.name
         characterBirthYearLabel.text = person?.birth_year
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
+    
     }
+    
+    func getSpecies() {
+        guard let speciesURL = getSpeciesURL() else { return }
+        for url in speciesURL {
+            getSpeciesData(from: url)
+            print("🤮URL: \(url)")
+        }
+        
+    }
+    
     
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
@@ -80,15 +96,13 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
-    //Species Call - 1
-    func getSpeciesURL(from speciesArrayURL: [String]) -> URL? {
-        guard let url = URL(string: speciesArrayURL) else { return nil }
-        
-        return url
+//    //Species Call - 1
+    func getSpeciesURL() -> [URL]? {
+        return person?.species
     }
     
     //Species Call - 2
-    func getSpeciesData(from url: URL) -> Species {
+    func getSpeciesData(from url: URL) /*-> Species*/ {
         let defaultSession = URLSession(configuration: .default)
         let urlRequest = URLRequest(url: url)
         let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
@@ -99,13 +113,15 @@ class CharacterDetailViewController: UIViewController {
             
             self.species = self.parseSpecies(data: data)
             
-//            DispatchQueue.main.async {
-//                self.updateLabels()
-//            }
+            DispatchQueue.main.async {
+                self.updateLabels()
+                self.speciesArray.append(self.species!)
+                print("🥶\(self.speciesArray)")
+            }
         }
         dataTask.resume()
-        
-        return species!
+//
+//        return species!
     }
     
     

@@ -19,7 +19,7 @@ struct Person: Codable {
     let gender: String
     let homeworld: String
     let films: [String]
-    let species: [String]
+    let species: [URL]
     let vehicles: [String]
     let starships: [String]
     let created: String
