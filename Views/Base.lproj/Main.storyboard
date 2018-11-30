@@ -9,14 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Table View Controller-->
+        <!--The Empire Strikes Back-->
         <scene sceneID="oDB-UO-7iw">
             <objects>
                 <tableViewController id="6rc-dP-dGA" customClass="MainViewTableViewController" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xz2-62-BS8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.78662186861038208" green="0.90046650171279907" blue="0.97648364305496216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NameCell" id="411-N6-OM8">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -25,6 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.78662186861038208" green="0.90046650171279907" blue="0.97648364305496216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="0Q1-3M-lzz" kind="show" identifier="CharacterDetail" id="13D-Wg-5oO"/>
                                 </connections>
@@ -35,7 +36,7 @@
                             <outlet property="delegate" destination="6rc-dP-dGA" id="9Wz-8j-m4G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RT6-F5-mJY"/>
+                    <navigationItem key="navigationItem" title="The Empire Strikes Back" id="RT6-F5-mJY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6a0-RJ-b6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="825-ah-6v9">

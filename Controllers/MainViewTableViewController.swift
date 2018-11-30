@@ -18,6 +18,8 @@ class MainViewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         characters = fetchPeopleInEmpireStrikesBack()
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.7577620149, green: 0.9049093127, blue: 0.985245049, alpha: 1)
+        navigationController?.navigationBar.prefersLargeTitles =  true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

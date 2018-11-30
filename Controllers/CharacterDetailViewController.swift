@@ -23,6 +23,8 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        
         if let character = person {
             let homeworldURL = getHomeworldURL(from: character.homeworld)
             if let url = homeworldURL {
