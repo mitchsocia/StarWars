@@ -19,6 +19,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterBirthYearLabel: UILabel!
     @IBOutlet weak var characterGenderLabel: UILabel!
     @IBOutlet weak var characterHomeWorldLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class CharacterDetailViewController: UIViewController {
         characterBirthYearLabel.text = person?.birth_year
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
+        speciesLabel.text = species?.name
     
     }
     
@@ -58,6 +60,7 @@ class CharacterDetailViewController: UIViewController {
     
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
+        speciesLabel.text = species?.name
     }
     
     func getHomeworldURL(from homeworldString: String) -> URL? {
