@@ -81,7 +81,7 @@ class CharacterDetailViewController: UIViewController {
     }
     
     //Species Call - 1
-    func getSpeciesURL(from speciesArrayURL: String) -> URL? {
+    func getSpeciesURL(from speciesArrayURL: [String]) -> URL? {
         guard let url = URL(string: speciesArrayURL) else { return nil }
         
         return url
