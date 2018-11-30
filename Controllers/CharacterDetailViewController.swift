@@ -27,32 +27,25 @@ class CharacterDetailViewController: UIViewController {
             let homeworldURL = getHomeworldURL(from: character.homeworld)
             if let url = homeworldURL {
                 getHomeworldData(from: url)
-         
-        //Species Call - 4
-//            let speciesURL = getSpeciesURL()
-//                print("SPECIES URL IS: \(speciesURL)")
-//                if let url = speciesURL {
-//                    getSpeciesData(from: url)
-//                }
+                
             }
-           
+            
         }
         
-         getSpecies()
+        getSpecies()
         
         characterNameLabel.text = person?.name
         characterBirthYearLabel.text = person?.birth_year
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
-    
+        
     }
     
     func getSpecies() {
         guard let speciesURL = getSpeciesURL() else { return }
         for url in speciesURL {
             getSpeciesData(from: url)
-            print("🤮URL: \(url)")
         }
         
     }
@@ -73,13 +66,13 @@ class CharacterDetailViewController: UIViewController {
         let defaultSession = URLSession(configuration: .default)
         let urlRequest = URLRequest(url: url)
         let dataTask = defaultSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
-
+            
             guard let data = data else {
                 return
             }
-
+            
             self.homeWorld = self.parse(data: data)
-
+            
             DispatchQueue.main.async {
                 self.updateLabels()
             }
@@ -99,7 +92,7 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
-//    //Species Call - 1
+    //    //Species Call - 1
     func getSpeciesURL() -> [URL]? {
         return person?.species
     }
@@ -123,8 +116,7 @@ class CharacterDetailViewController: UIViewController {
             }
         }
         dataTask.resume()
-//
-//        return species!
+        
     }
     
     
@@ -140,7 +132,6 @@ class CharacterDetailViewController: UIViewController {
             return nil
         }
     }
-    
     
 }
 
