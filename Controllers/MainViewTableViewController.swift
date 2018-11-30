@@ -42,8 +42,11 @@ class MainViewTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath)
         cell.textLabel?.text = "\(characters[indexPath.row].name)"
         cell.textLabel?.textColor = #colorLiteral(red: 0.05615694076, green: 0.2014237344, blue: 0.2816960812, alpha: 1)
-        cell.textLabel?.font = UIFont.init(name: "Futura Medium", size: 15)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel?.font = UIFont.init(name: "Futura Medium", size: 100)
     }
     
 }
