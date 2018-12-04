@@ -148,7 +148,7 @@ class CharacterDetailViewController: UIViewController {
     }
     
     
-    //Species Call - 3 ( #4 call getStarships() ^ )
+    //Species Call - 3
     func parseSpecies(data: Data) -> Species? {
         do {
             let decoder = JSONDecoder()
@@ -166,7 +166,20 @@ class CharacterDetailViewController: UIViewController {
         return person?.starships
     }
     
-    //2 - sesh
+    //2
+    func parseStarships(data: Data) -> Starship? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Starship.self, from: data)
+            
+            return result
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
+    
+    //3 - sesh ( #4 call getStarships() ^ )
     func getStarshipData(from url: URL) {
         let defaultSession = URLSession(configuration: .default)
         let urlRequest = URLRequest(url: url)
@@ -185,18 +198,7 @@ class CharacterDetailViewController: UIViewController {
         dataTask.resume()
     }
     
-    //3
-    func parseStarships(data: Data) -> Starship? {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode(Starship.self, from: data)
-            
-            return result
-        } catch {
-            print("JSON Error: \(error)")
-            return nil
-        }
-    }
+
     
     
 }
