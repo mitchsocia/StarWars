@@ -24,6 +24,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterHomeWorldLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     
+    @IBOutlet weak var starShipLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
@@ -45,6 +46,7 @@ class CharacterDetailViewController: UIViewController {
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
+        starShipLabel.text = starships?.name
         
     }
     
@@ -67,6 +69,7 @@ class CharacterDetailViewController: UIViewController {
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
+        starShipLabel.text = starships?.name
     }
     
     func getHomeworldURL(from homeworldString: String) -> URL? {
