@@ -18,7 +18,7 @@ struct Person: Codable {
     let birth_year: String
     let gender: String
     let homeworld: String
-    let films: [String]
+    let films: [URL]
     let species: [URL]
     let vehicles: [String]
     let starships: [URL]

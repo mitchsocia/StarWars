@@ -55,6 +55,7 @@ extension MainViewTableViewController {
         
         let urlString = "https://swapi.co/api/films/2/"
         
+        //url initializer 
         let url = URL(string: urlString)
         return url!
     }
@@ -83,7 +84,6 @@ extension MainViewTableViewController {
             
         }
         dataTask.resume()
-        
         return characters
         
     }

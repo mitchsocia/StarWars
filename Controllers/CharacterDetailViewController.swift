@@ -24,8 +24,8 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterGenderLabel: UILabel!
     @IBOutlet weak var characterHomeWorldLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
-    
     @IBOutlet weak var starShipLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
