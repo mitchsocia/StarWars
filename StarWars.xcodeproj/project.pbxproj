@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DA12F7021B6DF6B00B3D23C /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA12F6F21B6DF6B00B3D23C /* Starships.swift */; };
+		7DA12F7021B6DF6B00B3D23C /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA12F6F21B6DF6B00B3D23C /* Starship.swift */; };
 		7DB4676B21ADDFE4003BDA18 /* Homeworld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */; };
 		7DB467A721AF19AF003BDA18 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB467A621AF19AF003BDA18 /* Species.swift */; };
 		7DD646B92188DC270021E886 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD646B82188DC270021E886 /* Person.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7DA12F6F21B6DF6B00B3D23C /* Starships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starships.swift; sourceTree = "<group>"; };
+		7DA12F6F21B6DF6B00B3D23C /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeworld.swift; sourceTree = "<group>"; };
 		7DB467A621AF19AF003BDA18 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		7DD646B82188DC270021E886 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				7DD646B82188DC270021E886 /* Person.swift */,
 				7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */,
 				7DB467A621AF19AF003BDA18 /* Species.swift */,
-				7DA12F6F21B6DF6B00B3D23C /* Starships.swift */,
+				7DA12F6F21B6DF6B00B3D23C /* Starship.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				7DFDB2FB21874E4000B108D2 /* MainViewTableViewController.swift in Sources */,
 				7DB467A721AF19AF003BDA18 /* Species.swift in Sources */,
 				7DB4676B21ADDFE4003BDA18 /* Homeworld.swift in Sources */,
-				7DA12F7021B6DF6B00B3D23C /* Starships.swift in Sources */,
+				7DA12F7021B6DF6B00B3D23C /* Starship.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

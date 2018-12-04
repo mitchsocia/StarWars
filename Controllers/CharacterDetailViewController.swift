@@ -14,8 +14,9 @@ class CharacterDetailViewController: UIViewController {
     var homeWorld: Homeworld?
     var species: Species?
     var speciesArray: [Species] = []
-    var starships: Starships?
-    var starshipsArray: [Starships] = []
+    var starships: Starship?
+    var starshipsArray: [Starship] = []
+    var starshipNames: [String] = []
     
     
     @IBOutlet weak var characterNameLabel: UILabel!
@@ -46,8 +47,16 @@ class CharacterDetailViewController: UIViewController {
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
-        starShipLabel.text = starships?.name
+        let starshipsString = starshipNames.joined(separator: ", ")
+        print("starship names are: \(starshipsString)")
+        starShipLabel.text = starshipsString
         
+    }
+    
+    func getStarshipNames() {
+        for ship in starshipsArray {
+            starshipNames.append(ship.name)
+        }
     }
     
     func getSpecies() {
@@ -69,7 +78,9 @@ class CharacterDetailViewController: UIViewController {
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
-        starShipLabel.text = starships?.name
+        getStarshipNames()
+        let starshipsString = starshipNames.joined(separator: ", ")
+        starShipLabel.text = starshipsString
     }
     
     func getHomeworldURL(from homeworldString: String) -> URL? {
@@ -174,10 +185,10 @@ class CharacterDetailViewController: UIViewController {
     }
     
     //3
-    func parseStarships(data: Data) -> Starships? {
+    func parseStarships(data: Data) -> Starship? {
         do {
             let decoder = JSONDecoder()
-            let result = try decoder.decode(Starships.self, from: data)
+            let result = try decoder.decode(Starship.self, from: data)
             
             return result
         } catch {
