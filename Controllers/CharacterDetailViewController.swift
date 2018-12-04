@@ -67,6 +67,7 @@ class CharacterDetailViewController: UIViewController {
         
     }
     
+    //4 - Loop through URLs and return data
     func getStarships() {
         guard let starshipURL = getStarshipURL() else { return }
         for url in starshipURL {
@@ -147,7 +148,7 @@ class CharacterDetailViewController: UIViewController {
     }
     
     
-    //Species Call - 3
+    //Species Call - 3 ( #4 call getStarships() ^ )
     func parseSpecies(data: Data) -> Species? {
         do {
             let decoder = JSONDecoder()
