@@ -135,10 +135,11 @@ class CharacterDetailViewController: UIViewController {
             }
             
             self.species = self.parseSpecies(data: data)
+            self.speciesArray.append(self.species!)
             
             DispatchQueue.main.async {
                 self.updateLabels()
-                self.speciesArray.append(self.species!)
+            //Moved append species array to line 138 outside of main queue
             }
         }
         dataTask.resume()
