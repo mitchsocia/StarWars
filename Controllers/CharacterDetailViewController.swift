@@ -30,14 +30,13 @@ class CharacterDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         
-        if let character = person {
-            let homeworldURL = getHomeworldURL(from: character.homeworld)
-            if let url = homeworldURL {
-                getHomeworldData(from: url)
-                
-            }
-            
+        
+        let homeworldURL = getHomeworldURL()
+        if let url = homeworldURL {
+            getHomeworldData(from: url)
         }
+        
+        
         
         getSpecies()
         getStarships()
@@ -84,10 +83,8 @@ class CharacterDetailViewController: UIViewController {
         starShipLabel.text = starshipsString
     }
     
-    func getHomeworldURL(from homeworldString: String) -> URL? {
-        guard let url = URL(string: homeworldString) else { return nil }
-        
-        return url
+    func getHomeworldURL() -> URL? {
+        return person?.homeworld
     }
     
     func getHomeworldData(from url: URL) {
@@ -140,7 +137,7 @@ class CharacterDetailViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.updateLabels()
-            //Moved append species array to line 138 outside of main queue
+                //Moved append species array to line 138 outside of main queue
             }
         }
         dataTask.resume()
@@ -198,7 +195,7 @@ class CharacterDetailViewController: UIViewController {
         dataTask.resume()
     }
     
-
+    
     
     
 }
