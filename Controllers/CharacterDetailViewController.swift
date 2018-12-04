@@ -14,6 +14,9 @@ class CharacterDetailViewController: UIViewController {
     var homeWorld: Homeworld?
     var species: Species?
     var speciesArray: [Species] = []
+    var starships: Starships?
+    var starshipsArray: [Starships] = []
+    
     
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterBirthYearLabel: UILabel!
@@ -35,6 +38,7 @@ class CharacterDetailViewController: UIViewController {
         }
         
         getSpecies()
+        getStarships()
         
         characterNameLabel.text = person?.name
         characterBirthYearLabel.text = person?.birth_year
@@ -50,6 +54,13 @@ class CharacterDetailViewController: UIViewController {
             getSpeciesData(from: url)
         }
         
+    }
+    
+    func getStarships() {
+        guard let starshipURL = getStarshipURL() else { return }
+        for url in starshipURL {
+            getStarshipData(from: url)
+        }
     }
     
     
@@ -134,6 +145,44 @@ class CharacterDetailViewController: UIViewController {
             return nil
         }
     }
+    
+    //1 - getting URL from Person object
+    func getStarshipURL() -> [URL]? {
+        return person?.starships
+    }
+    
+    //2 - sesh
+    func getStarshipData(from url: URL) {
+        let defaultSession = URLSession(configuration: .default)
+        let urlRequest = URLRequest(url: url)
+        let dataTask = defaultSession.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            self.starships = self.parseStarships(data: data)
+            
+            DispatchQueue.main.async {
+                self.updateLabels()
+            }
+            
+            self.starshipsArray.append(self.starships!)
+        }
+        dataTask.resume()
+    }
+    
+    //3
+    func parseStarships(data: Data) -> Starships? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Starships.self, from: data)
+            
+            return result
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
+    
     
 }
 

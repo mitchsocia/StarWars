@@ -21,7 +21,7 @@ struct Person: Codable {
     let films: [String]
     let species: [URL]
     let vehicles: [String]
-    let starships: [String]
+    let starships: [URL]
     let created: String
     let edited: String
     let url: String
