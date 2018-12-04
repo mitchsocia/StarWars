@@ -139,7 +139,6 @@ class CharacterDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.updateLabels()
                 self.speciesArray.append(self.species!)
-                print("🥶\(self.speciesArray)")
             }
         }
         dataTask.resume()
