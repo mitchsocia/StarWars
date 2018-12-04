@@ -25,6 +25,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterHomeWorldLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var starShipLabel: UILabel!
+    @IBOutlet weak var massLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class CharacterDetailViewController: UIViewController {
         characterBirthYearLabel.text = person?.birth_year
         characterGenderLabel.text = person?.gender
         characterHomeWorldLabel.text = homeWorld?.name
+        massLabel.text = "\(person?.mass ?? "Unknown") kg"
         speciesLabel.text = species?.name
         let starshipsString = starshipNames.joined(separator: ", ")
         print("starship names are: \(starshipsString)")
