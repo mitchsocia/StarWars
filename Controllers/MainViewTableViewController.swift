@@ -45,10 +45,6 @@ class MainViewTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.font = UIFont.init(name: "Futura Medium", size: 100)
-    }
-    
 }
 
 // Network Manager
