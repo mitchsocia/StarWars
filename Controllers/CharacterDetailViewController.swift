@@ -17,6 +17,9 @@ class CharacterDetailViewController: UIViewController {
     var starships: Starship?
     var starshipsArray: [Starship] = []
     var starshipNames: [String] = []
+    var films: Film?
+    var filmsArray: [Film] = []
+    var filmNames: [String] = []
     
     
     @IBOutlet weak var characterNameLabel: UILabel!
@@ -26,7 +29,8 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var starShipLabel: UILabel!
     @IBOutlet weak var massLabel: UILabel!
-    
+    @IBOutlet weak var filmsLabel: UILabel!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
@@ -37,10 +41,11 @@ class CharacterDetailViewController: UIViewController {
             getHomeworldData(from: url)
         }
         
-        
+      
         
         getSpecies()
         getStarships()
+        getFilms()
         
         characterNameLabel.text = person?.name
         characterBirthYearLabel.text = person?.birth_year
@@ -52,11 +57,20 @@ class CharacterDetailViewController: UIViewController {
         print("starship names are: \(starshipsString)")
         starShipLabel.text = starshipsString
         
+        let filmNamesString = filmNames.joined(separator: ", ")
+        filmsLabel.text = filmNamesString
+        
     }
     
     func getStarshipNames() {
         for ship in starshipsArray {
             starshipNames.append(ship.name)
+        }
+    }
+    
+    func getFilmNames() {
+        for film in filmsArray {
+            filmNames.append(film.title)
         }
     }
     
@@ -66,6 +80,13 @@ class CharacterDetailViewController: UIViewController {
             getSpeciesData(from: url)
         }
         
+    }
+    
+    func getFilms() {
+        guard let filmsURLS = getFilmURLS() else { return }
+        for url in filmsURLS {
+            getFilmData(from: url)
+        }
     }
     
     //4 - Loop through URLs and return data
@@ -83,6 +104,10 @@ class CharacterDetailViewController: UIViewController {
         getStarshipNames()
         let starshipsString = starshipNames.joined(separator: ", ")
         starShipLabel.text = starshipsString
+        
+        getFilmNames()
+        let filmNamesString = filmNames.joined(separator: ", ")
+        filmsLabel.text = filmNamesString
     }
     
     func getHomeworldURL() -> URL? {
@@ -197,8 +222,39 @@ class CharacterDetailViewController: UIViewController {
         dataTask.resume()
     }
     
+    func getFilmURLS() -> [URL]? {
+        return person?.films
+    }
     
+    func getFilmData(from url: URL) {
+        let defaultSession = URLSession(configuration: .default)
+        let urlRequest = URLRequest(url: url)
+        let dataTask = defaultSession.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            self.films = self.parseFilms(data: data)
+            
+            DispatchQueue.main.async {
+                self.updateLabels()
+            }
+            
+            self.filmsArray.append(self.films!)
+        }
+        dataTask.resume()
+    }
     
+    func parseFilms(data: Data) -> Film? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Film.self, from: data)
+            
+            return result
+        } catch {
+            print("JSON Error: \(error)")
+            return nil
+        }
+    }
     
 }
 

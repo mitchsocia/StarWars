@@ -138,15 +138,29 @@
                                 <color key="textColor" red="0.097709961240000004" green="0.1983115375" blue="0.27452027800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Film apperances:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghG-YQ-7rX">
+                                <rect key="frame" x="20" y="462" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FilmsLabel" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-b5-jbF">
+                                <rect key="frame" x="21" y="502" width="365" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yON-hL-KMc">
-                                <rect key="frame" x="20" y="541" width="374" height="119"/>
+                                <rect key="frame" x="21" y="689" width="374" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Starships:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZA-zp-4bP">
-                                <rect key="frame" x="20" y="507" width="88" height="26"/>
+                                <rect key="frame" x="21" y="655" width="88" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -161,6 +175,7 @@
                         <outlet property="characterGenderLabel" destination="YMW-5P-IQu" id="lcY-E1-xqa"/>
                         <outlet property="characterHomeWorldLabel" destination="Wir-Lg-8Ab" id="Nsy-5p-hSq"/>
                         <outlet property="characterNameLabel" destination="ZYy-ug-vY5" id="bdY-CE-IwT"/>
+                        <outlet property="filmsLabel" destination="pd1-b5-jbF" id="OHe-kO-Qi6"/>
                         <outlet property="massLabel" destination="naR-dS-rgw" id="ZN2-nb-wqZ"/>
                         <outlet property="speciesLabel" destination="cga-dg-KDM" id="Giz-fZ-nwv"/>
                         <outlet property="starShipLabel" destination="yON-hL-KMc" id="bQT-YX-ktT"/>

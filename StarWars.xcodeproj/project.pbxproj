@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DA12F7021B6DF6B00B3D23C /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA12F6F21B6DF6B00B3D23C /* Starship.swift */; };
+		7DA12F7421B72B0F00B3D23C /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA12F7321B72B0F00B3D23C /* Film.swift */; };
 		7DB4676B21ADDFE4003BDA18 /* Homeworld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */; };
 		7DB467A721AF19AF003BDA18 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB467A621AF19AF003BDA18 /* Species.swift */; };
 		7DD646B92188DC270021E886 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD646B82188DC270021E886 /* Person.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		7DA12F6F21B6DF6B00B3D23C /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
+		7DA12F7321B72B0F00B3D23C /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeworld.swift; sourceTree = "<group>"; };
 		7DB467A621AF19AF003BDA18 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		7DD646B82188DC270021E886 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				7DB4676A21ADDFE4003BDA18 /* Homeworld.swift */,
 				7DB467A621AF19AF003BDA18 /* Species.swift */,
 				7DA12F6F21B6DF6B00B3D23C /* Starship.swift */,
+				7DA12F7321B72B0F00B3D23C /* Film.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD646B92188DC270021E886 /* Person.swift in Sources */,
+				7DA12F7421B72B0F00B3D23C /* Film.swift in Sources */,
 				7DFDB304218898EB00B108D2 /* CharacterDetailViewController.swift in Sources */,
 				7DFDB2CD21874B5D00B108D2 /* AppDelegate.swift in Sources */,
 				7DFDB2FB21874E4000B108D2 /* MainViewTableViewController.swift in Sources */,
