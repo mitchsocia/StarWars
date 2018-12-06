@@ -104,9 +104,17 @@ class CharacterDetailViewController: UIViewController {
         starShipLabel.text = starshipsString
         
         getFilmNames()
-        let filmNamesString = filmNames.joined(separator: ", ")
-        filmsLabel.text = filmNamesString
         
+        if filmNames.isEmpty {
+            let filmNamesString = filmNames.joined(separator: ", ")
+            filmsLabel.text = filmNamesString
+        } else {
+            filmsLabel.text = ""
+        }
+        
+        
+        
+
     }
     
     func getHomeworldURL() -> URL? {
@@ -256,4 +264,5 @@ class CharacterDetailViewController: UIViewController {
     }
     
 }
+
 
