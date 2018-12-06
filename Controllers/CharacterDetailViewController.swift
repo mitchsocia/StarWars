@@ -53,12 +53,10 @@ class CharacterDetailViewController: UIViewController {
         characterHomeWorldLabel.text = homeWorld?.name
         massLabel.text = "\(person?.mass ?? "Unknown") kg"
         speciesLabel.text = species?.name
-        let starshipsString = starshipNames.joined(separator: ", ")
-        print("starship names are: \(starshipsString)")
-        starShipLabel.text = starshipsString
         
-        let filmNamesString = filmNames.joined(separator: ", ")
-        filmsLabel.text = filmNamesString
+        starShipLabel.text = "\(String.self)"
+      
+        filmsLabel.text = "\(String.self)"
         
     }
     
@@ -108,6 +106,7 @@ class CharacterDetailViewController: UIViewController {
         getFilmNames()
         let filmNamesString = filmNames.joined(separator: ", ")
         filmsLabel.text = filmNamesString
+        
     }
     
     func getHomeworldURL() -> URL? {
