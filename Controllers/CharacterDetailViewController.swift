@@ -101,6 +101,7 @@ class CharacterDetailViewController: UIViewController {
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
+        
         getStarshipNames()
         let starshipsString = starshipNames.joined(separator: ", ")
         starShipLabel.text = starshipsString
