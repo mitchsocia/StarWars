@@ -30,7 +30,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var starShipLabel: UILabel!
     @IBOutlet weak var massLabel: UILabel!
     @IBOutlet weak var filmsLabel: UILabel!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
@@ -41,7 +41,7 @@ class CharacterDetailViewController: UIViewController {
             getHomeworldData(from: url)
         }
         
-      
+        
         
         getSpecies()
         getStarships()
@@ -54,9 +54,6 @@ class CharacterDetailViewController: UIViewController {
         massLabel.text = "\(person?.mass ?? "Unknown") kg"
         speciesLabel.text = species?.name
         
-        starShipLabel.text = "\(String.self)"
-      
-        filmsLabel.text = "\(String.self)"
         
     }
     
@@ -99,22 +96,18 @@ class CharacterDetailViewController: UIViewController {
     func updateLabels() {
         characterHomeWorldLabel.text = homeWorld?.name
         speciesLabel.text = species?.name
+        
         getStarshipNames()
         let starshipsString = starshipNames.joined(separator: ", ")
         starShipLabel.text = starshipsString
         
         getFilmNames()
+        let filmNamesString = filmNames.joined(separator: ", ")
+        filmsLabel.text = filmNamesString
         
-        if filmNames.isEmpty {
-            let filmNamesString = filmNames.joined(separator: ", ")
-            filmsLabel.text = filmNamesString
-        } else {
-            filmsLabel.text = ""
-        }
+        print("👽👽👽\(filmNames)")
         
         
-        
-
     }
     
     func getHomeworldURL() -> URL? {
@@ -220,11 +213,13 @@ class CharacterDetailViewController: UIViewController {
             }
             self.starships = self.parseStarships(data: data)
             
-            DispatchQueue.main.async {
-                self.updateLabels()
-            }
-            
             self.starshipsArray.append(self.starships!)
+            
+//            DispatchQueue.main.async {
+//                self.updateLabels()
+//            }
+            
+            
         }
         dataTask.resume()
     }
